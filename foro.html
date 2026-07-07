@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Foro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="index.html">Perfil</a>
+        <a href="foro.html" class="activo">Foro</a>
+        <a href="ranking.html">Ranking</a>
+    </nav>
+
+    <div class="pantalla-dividida con-nav">
+
+        <div class="panel-cafe">
+            <img src="img/buho.png" alt="Buho de EduLecto" onerror="this.style.display='none'">
+            <h1>Responde las preguntas del foro.</h1>
+        </div>
+
+        <div class="panel-contenido">
+            <div class="pregunta-foro">
+                <h2>¿Cómo se escribe?</h2>
+                <span class="dibujo" id="dibujo"></span>
+            </div>
+
+            <input type="text" class="entrada-respuesta" id="respuesta" placeholder="Escribe la respuesta...">
+            <p class="mensaje-feedback" id="feedback"></p>
+
+            <div class="fila-botones">
+                <button class="boton" id="btnAnterior">Anterior</button>
+                <button class="boton" id="btnSiguiente">Siguiente</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/foro.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Ranking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="index.html">Perfil</a>
+        <a href="foro.html">Foro</a>
+        <a href="ranking.html" class="activo">Ranking</a>
+    </nav>
+
+    <p class="saludo">Hola Ashley....</p>
+
+    <div class="contenedor-ranking">
+        <div class="tarjeta tarjeta-ranking">
+            <h3>Ranking global <span>&#128200;</span></h3>
+            <div id="listaRanking"></div>
+        </div>
+    </div>
+
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="js/ranking.js"></script>
+</body>
+</html>

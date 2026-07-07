@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Resultado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="pantalla-dividida">
+
+        <div class="panel-cafe">
+            <img src="img/buho.png" alt="Buho de EduLecto" onerror="this.style.display='none'">
+            <h1>Excelente, haz finalizado el diagnostico.</h1>
+        </div>
+
+        <div class="panel-contenido">
+            <h2>Nivel Obtenido</h2>
+
+            <div class="tarjeta tarjeta-resultado">
+                <h3 id="tituloNivel">Nivel</h3>
+                <p id="mensajeNivel"></p>
+                <div class="etiqueta-barra">
+                    <span>Aciertos</span>
+                    <span id="porcentaje"></span>
+                </div>
+                <div class="barra">
+                    <div class="barra-relleno" id="relleno" style="width:0%"></div>
+                </div>
+            </div>
+
+            <button class="boton" onclick="location.href='index.html'">Ir a mi perfil</button>
+        </div>
+
+    </div>
+
+    <script src="js/resultado.js"></script>
+</body>
+</html>

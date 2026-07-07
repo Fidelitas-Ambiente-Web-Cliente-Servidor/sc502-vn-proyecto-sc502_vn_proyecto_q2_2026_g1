@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Perfil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="index.html" class="activo">Perfil</a>
+        <a href="foro.html">Foro</a>
+        <a href="ranking.html">Ranking</a>
+    </nav>
+
+    <p class="saludo" id="saludo">Hola Ashley....</p>
+
+    <div class="contenido-perfil">
+
+        <div class="columna-perfil">
+            <div class="tarjeta tarjeta-estadisticas">
+                <h3>Estadisticas <span>&#128200;</span></h3>
+                <p>Nivel: <span id="nivelUsuario">Explorador</span> <span class="estrellas" id="estrellas"></span></p>
+                <p>Racha: <span id="racha"></span> días</p>
+                <p>Puntos: <span id="puntos"></span></p>
+                <p>Insignias:</p>
+            </div>
+
+            <div class="tarjeta tarjeta-progreso">
+                <h3>Mi Progreso de Lectura <span>&#128200;</span></h3>
+                <div id="listaProgreso"></div>
+            </div>
+        </div>
+
+        <div class="lecciones">
+            <h3>Continuar Lecciones</h3>
+            <button class="boton boton-cafe" onclick="location.href='diagnostico.html'">&#128214; Lectura</button>
+            <button class="boton boton-cafe" onclick="location.href='diagnostico.html'">&#9999;&#65039; Escritura</button>
+            <button class="boton boton-cafe" onclick="location.href='foro.html'">&#127918; Juegos</button>
+        </div>
+
+    </div>
+
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>
