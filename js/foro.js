@@ -46,7 +46,7 @@ btnSiguiente.onclick = function () {
                 mostrarPregunta();
             } else {
                 alert("Terminaste todas las preguntas del foro, ¡buen trabajo!");
-                window.location.href = "index.html";
+                window.location.href = "perfil.html";
             }
         }, 800);
     } else {
