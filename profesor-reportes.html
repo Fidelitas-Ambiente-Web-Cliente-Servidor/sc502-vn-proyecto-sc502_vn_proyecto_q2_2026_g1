@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Reportes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="profesor-reportes.html">Inicio</a>
+        <a href="profesor-estudiantes.html">Estudiantes</a>
+        <a href="profesor-ejercicios.html">Ejercicios</a>
+        <a href="profesor-clases.html">Clases</a>
+        <a href="profesor-foro.html">Foro</a>
+        <a href="profesor-reportes.html" class="activo">Reportes</a>
+    </nav>
+
+    <p class="saludo" id="saludo">Hola Ashley....</p>
+
+    <div class="contenido-profesor">
+
+        <div class="fila-acciones" style="align-items: flex-start; justify-content: space-between; flex-wrap: wrap;">
+
+            <div class="tarjeta tarjeta-estadisticas" style="width: 380px;">
+                <h3>Estadisticas <span>&#128200;</span></h3>
+                <div class="fila-progreso">
+                    <span>Numero de estudiantes</span>
+                    <span id="numEstudiantes">25</span>
+                </div>
+                <div class="fila-progreso">
+                    <span>Promedio</span>
+                    <span id="promedio">90</span>
+                </div>
+                <div class="etiqueta-barra">
+                    <span>Progreso</span>
+                    <span id="progresoTexto">75%</span>
+                </div>
+                <div class="barra" style="margin-bottom: 18px;">
+                    <div class="barra-relleno" id="progresoBarra" style="width: 75%;"></div>
+                </div>
+                <div class="fila-progreso">
+                    <span>Lecciones Pendientes</span>
+                    <span id="leccionesPendientes">7</span>
+                </div>
+            </div>
+
+            <div class="fila-acciones" style="flex-direction: column;">
+                <button class="boton boton-accion" onclick="location.href='profesor-ejercicios.html#crear'">Crear nueva actividad</button>
+                <button class="boton boton-accion" onclick="location.href='profesor-estudiantes.html'">Asignar actividades</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="js/profesor-reportes.js"></script>
+</body>
+</html>

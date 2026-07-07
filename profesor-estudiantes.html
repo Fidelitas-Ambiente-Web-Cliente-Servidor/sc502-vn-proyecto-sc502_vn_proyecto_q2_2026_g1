@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Estudiantes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="profesor-reportes.html">Inicio</a>
+        <a href="profesor-estudiantes.html" class="activo">Estudiantes</a>
+        <a href="profesor-ejercicios.html">Ejercicios</a>
+        <a href="profesor-clases.html">Clases</a>
+        <a href="profesor-foro.html">Foro</a>
+        <a href="profesor-reportes.html">Reportes</a>
+    </nav>
+
+    <p class="saludo" id="saludo">Hola Ashley....</p>
+
+    <div class="contenido-profesor">
+
+        <div class="tarjeta tarjeta-tabla">
+            <span class="icono-tarjeta">&#128100;</span>
+            <h3 style="margin-bottom: 15px;">Gestión estudiantes</h3>
+            <table class="tabla-profesor">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Nivel</th>
+                        <th>Progreso</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoEstudiantes"></tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 30px;">
+            <button class="boton boton-accion" onclick="location.href='profesor-ejercicios.html#crear'">Crear nueva actividad</button>
+        </div>
+
+    </div>
+
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="js/profesor-estudiantes.js"></script>
+</body>
+</html>
