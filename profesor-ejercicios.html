@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Ejercicios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="profesor-reportes.html">Inicio</a>
+        <a href="profesor-estudiantes.html">Estudiantes</a>
+        <a href="profesor-ejercicios.html" class="activo">Ejercicios</a>
+        <a href="profesor-clases.html">Clases</a>
+        <a href="profesor-foro.html">Foro</a>
+        <a href="profesor-reportes.html">Reportes</a>
+    </nav>
+
+    <p class="saludo" id="saludo">Hola Ashley....</p>
+
+    <div class="contenido-profesor">
+
+        <div id="vistaListado">
+            <div class="tarjeta tarjeta-tabla">
+                <span class="icono-tarjeta">&#128100;</span>
+                <h3 style="margin-bottom: 15px;">Ejercicios</h3>
+                <table class="tabla-profesor">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Editar</th>
+                            <th>Nivel</th>
+                            <th>Guardar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoEjercicios"></tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <button class="boton boton-accion" id="btnMostrarForm">Crear nueva actividad</button>
+            </div>
+        </div>
+
+        <div id="vistaFormulario" class="tarjeta tarjeta-formulario" style="display: none;">
+            <div class="campo-formulario">
+                <label for="nombreActividad">Nombre de la actividad</label>
+                <input type="text" id="nombreActividad" placeholder="Ej: Crucigrama">
+            </div>
+
+            <div class="campo-formulario">
+                <label for="descripcionActividad">Descripción de la actividad *</label>
+                <textarea id="descripcionActividad" placeholder="Describa las responsabilidades y tareas principales del puesto..."></textarea>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="estadoActividad">Estado *</label>
+                <select id="estadoActividad">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+
+            <div class="fila-form-botones">
+                <button class="boton" id="btnAgregarActividad">&#128190; Agregar actividad</button>
+                <button class="boton-secundario" id="btnCancelarActividad">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="js/profesor-ejercicios.js"></script>
+</body>
+</html>

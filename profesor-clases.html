@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Clases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/profesor.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="profesor-reportes.html">Inicio</a>
+        <a href="profesor-estudiantes.html">Estudiantes</a>
+        <a href="profesor-ejercicios.html">Ejercicios</a>
+        <a href="profesor-clases.html" class="activo">Clases</a>
+        <a href="profesor-foro.html">Foro</a>
+        <a href="profesor-reportes.html">Reportes</a>
+    </nav>
+
+    <p class="saludo" id="saludo">Hola Ashley....</p>
+
+    <div class="contenido-profesor">
+
+        <div class="pestanas">
+            <button class="pestana futuras" data-filtro="futura">Futuras</button>
+            <button class="pestana hoy" data-filtro="hoy">Para hoy</button>
+            <button class="pestana pasadas" data-filtro="pasada">Pasadas</button>
+        </div>
+
+        <div class="calendario">
+            <div class="calendario-cabecera">
+                <span class="numero-dia" style="font-size: 1.8rem;">06</span>
+                <span class="mes" id="mesActual">JUNE</span>
+                <span>2025</span>
+            </div>
+            <table class="tabla-calendario">
+                <thead>
+                    <tr>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoCalendario"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="js/profesor-clases.js"></script>
+</body>
+</html>
