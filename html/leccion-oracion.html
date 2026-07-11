@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Lección 4</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <main style="
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 38% 62%;
+    ">
+
+        <section style="
+            background-color: #6f4a36;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            padding: 40px;
+            text-align: center;
+        ">
+
+            <img src="../img/buho.png" alt="Buho de EduLecto" style="
+                width: 220px;
+                max-width: 80%;
+            " onerror="this.style.display='none'">
+
+            <h1 style="
+                font-size: 42px;
+                line-height: 1.1;
+                margin: 0;
+                font-weight: 700;
+            ">
+                Aprendamos a formar oraciones.
+            </h1>
+
+        </section>
+
+        <section style="
+            background-color: #f6ecd9;
+            padding: 45px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        ">
+
+            <header style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 25px;
+                margin-bottom: 45px;
+            ">
+
+                <h2 style="
+                    margin: 0;
+                    color: #6f4a36;
+                    font-size: 34px;
+                    font-weight: 700;
+                ">
+                    Lección 4
+                </h2>
+
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    color: #6f4a36;
+                    font-weight: 600;
+                ">
+                    <span>Progreso</span>
+
+                    <div style="
+                        width: 220px;
+                        height: 14px;
+                        background-color: #e1cfae;
+                        border-radius: 20px;
+                        overflow: hidden;
+                    ">
+                        <div id="barraProgreso" style="
+                            width: 75%;
+                            height: 100%;
+                            background-color: #7bb56b;
+                            border-radius: 20px;
+                        "></div>
+                    </div>
+
+                    <strong id="textoProgreso">75%</strong>
+                </div>
+
+            </header>
+
+            <h3 style="
+                color: #6f4a36;
+                font-size: 24px;
+                margin-bottom: 25px;
+                font-weight: 600;
+            ">
+                Seleccione la palabra correcta
+            </h3>
+
+            <div id="oracionTexto" style="
+                background-color: white;
+                color: #6f4a36;
+                padding: 14px 40px;
+                border-radius: 22px;
+                font-size: 30px;
+                font-weight: 600;
+                width: fit-content;
+                min-width: 300px;
+                text-align: center;
+                margin-bottom: 35px;
+                box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            ">
+                El ___ canta.
+            </div>
+
+            <div style="
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                width: 260px;
+                margin-bottom: 25px;
+            ">
+
+                <button class="boton boton-cafe opcion-respuesta" data-respuesta="Perro">
+                    Perro
+                </button>
+
+                <button class="boton boton-cafe opcion-respuesta" data-respuesta="Pájaro">
+                    Pájaro
+                </button>
+
+            </div>
+
+            <p id="mensajeRespuesta" style="
+                min-height: 28px;
+                font-size: 20px;
+                font-weight: 600;
+                margin: 0 0 18px;
+                color: #6f4a36;
+            "></p>
+
+            <button id="btnComprobar" class="boton boton-verde" style="
+                width: 220px;
+            ">
+                Comprobar
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="../js/leccion-oracion.js"></script>
+</body>
+</html>
