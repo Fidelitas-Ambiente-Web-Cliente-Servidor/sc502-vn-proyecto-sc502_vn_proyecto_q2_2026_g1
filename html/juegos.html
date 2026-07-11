@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Juegos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="perfil.html">Inicio</a>
+        <a href="perfil.html" class="activo">Perfil</a>
+        <a href="foro.html">Foro</a>
+        <a href="ranking.html">Ranking</a>
+    </nav>
+
+    <p class="saludo" id="saludo">Hola Ashley....</p>
+
+    <main style="min-height: calc(100vh - 130px); padding: 25px 55px 100px;">
+
+        <section style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 35px;
+            width: 100%;
+        ">
+
+            <!-- Crucigramas -->
+            <article class="opcion-juego" data-juego="crucigrama" style="
+                width: 30%;
+                min-width: 240px;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 40px;
+            ">
+                <svg width="280" height="220" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+                    <rect x="35" y="75" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+                    <rect x="77" y="75" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+                    <rect x="119" y="75" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+                    <rect x="161" y="75" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+
+                    <rect x="77" y="33" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+                    <rect x="77" y="117" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+                    <rect x="77" y="159" width="42" height="42" fill="#f8df78" stroke="#f0c33f" stroke-width="7"/>
+
+                    <rect x="210" y="55" width="18" height="100" rx="7" fill="#2c94bd"/>
+                    <rect x="210" y="38" width="18" height="20" rx="5" fill="#f3d36b"/>
+                    <polygon points="219,155 232,182 206,182" fill="#333"/>
+                </svg>
+
+                <h2 style="color:#000; font-size:36px; line-height:1; margin-top:10px;">
+                    Crucigramas
+                </h2>
+            </article>
+
+            <!-- Ordenar las palabras -->
+            <article class="opcion-juego" data-juego="ordenar" style="
+                width: 30%;
+                min-width: 240px;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 190px;
+            ">
+                <svg width="280" height="290" viewBox="0 0 280 290" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+                    <rect x="55" y="8" width="170" height="220" fill="white" stroke="#e5e5e5" stroke-width="2"/>
+                    <text x="72" y="30" font-size="11" font-family="Fredoka" fill="#222">Ordena las letras</text>
+                    <text x="72" y="44" font-size="7" font-family="Arial" fill="#333">Instrucciones: Ordena las letras.</text>
+
+                    <ellipse cx="105" cy="96" rx="35" ry="45" fill="#d88933" stroke="#91501d" stroke-width="4"/>
+                    <ellipse cx="145" cy="120" rx="32" ry="28" fill="#d88933" stroke="#91501d" stroke-width="4"/>
+                    <ellipse cx="175" cy="92" rx="24" ry="22" fill="#d88933" stroke="#91501d" stroke-width="4"/>
+                    <ellipse cx="188" cy="68" rx="10" ry="16" fill="#d88933" stroke="#91501d" stroke-width="3"/>
+                    <circle cx="183" cy="88" r="3" fill="#000"/>
+
+                    <rect x="70" y="168" width="25" height="25" fill="white" stroke="#333" stroke-width="2"/>
+                    <rect x="100" y="168" width="25" height="25" fill="white" stroke="#333" stroke-width="2"/>
+                    <rect x="130" y="168" width="25" height="25" fill="white" stroke="#333" stroke-width="2"/>
+                    <rect x="160" y="168" width="25" height="25" fill="white" stroke="#333" stroke-width="2"/>
+
+                    <line x1="68" y1="210" x2="190" y2="210" stroke="#333" stroke-width="2" stroke-dasharray="4,4"/>
+
+                    <rect x="75" y="228" width="28" height="28" fill="white" stroke="#777" stroke-width="2"/>
+                    <rect x="120" y="228" width="28" height="28" fill="white" stroke="#777" stroke-width="2"/>
+                    <rect x="165" y="228" width="28" height="28" fill="white" stroke="#777" stroke-width="2"/>
+
+                    <text x="89" y="248" text-anchor="middle" font-size="18" font-family="Fredoka" fill="#000">L</text>
+                    <text x="134" y="248" text-anchor="middle" font-size="18" font-family="Fredoka" fill="#000">A</text>
+                    <text x="179" y="248" text-anchor="middle" font-size="18" font-family="Fredoka" fill="#000">R</text>
+                </svg>
+
+                <h2 style="color:#000; font-size:36px; line-height:0.95; margin-top:8px;">
+                    Ordenar las<br>palabras
+                </h2>
+            </article>
+
+            <!-- Completar la Oración -->
+            <article class="opcion-juego" data-juego="oracion" style="
+                width: 30%;
+                min-width: 270px;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 55px;
+            ">
+                <svg width="330" height="220" viewBox="0 0 330 220" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%;">
+                    <rect x="15" y="25" width="300" height="145" fill="#cfe1dd"/>
+
+                    <circle cx="105" cy="85" r="36" fill="#e7ddec"/>
+                    <circle cx="75" cy="105" r="27" fill="#e7ddec"/>
+                    <circle cx="135" cy="100" r="24" fill="#e7ddec"/>
+
+                    <text x="86" y="100" font-size="58" font-family="Fredoka" fill="#3c2431">?</text>
+
+                    <ellipse cx="230" cy="95" rx="45" ry="60" fill="#9b5f52"/>
+                    <ellipse cx="238" cy="108" rx="33" ry="40" fill="#fde3d6"/>
+                    <ellipse cx="220" cy="72" rx="45" ry="35" fill="#9b5f52"/>
+                    <circle cx="228" cy="105" r="4" fill="#000"/>
+                    <circle cx="252" cy="105" r="4" fill="#000"/>
+
+                    <path d="M236 125 Q245 135 256 125" stroke="#7d4a42" stroke-width="3" fill="none"/>
+                    <path d="M214 150 Q235 168 264 150" stroke="#9b5f52" stroke-width="10" fill="none"/>
+                </svg>
+
+                <h2 style="color:#000; font-size:36px; line-height:1; margin-top:18px;">
+                    Completar la Oración por favor
+                    
+                </h2>
+            </article>
+
+        </section>
+
+    </main>
+
+    <img src="../img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+
+    <script src="../js/juegos.js"></script>
+</body>
+</html>

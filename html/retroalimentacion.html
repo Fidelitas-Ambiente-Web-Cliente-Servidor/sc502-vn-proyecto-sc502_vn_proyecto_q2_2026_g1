@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLecto - Retroalimentación</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+    <main style="
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 38% 62%;
+    ">
+
+        <section style="
+            background-color: #6f4a36;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            padding: 40px;
+            text-align: center;
+        ">
+
+            <img src="../img/buho.png" alt="Buho de EduLecto" style="
+                width: 220px;
+                max-width: 80%;
+            " onerror="this.style.display='none'">
+
+            <h1 style="
+                font-size: 42px;
+                line-height: 1.1;
+                margin: 0;
+                font-weight: 700;
+            ">
+                Aprendamos a formar oraciones.
+            </h1>
+
+        </section>
+
+        <section style="
+            background-color: #f6ecd9;
+            padding: 45px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        ">
+
+            <header style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 25px;
+                margin-bottom: 45px;
+            ">
+
+                <h2 style="
+                    margin: 0;
+                    color: #6f4a36;
+                    font-size: 34px;
+                    font-weight: 700;
+                ">
+                    Lección 4
+                </h2>
+
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    color: #6f4a36;
+                    font-weight: 600;
+                ">
+                    <span>Progreso</span>
+
+                    <div style="
+                        width: 220px;
+                        height: 14px;
+                        background-color: #e1cfae;
+                        border-radius: 20px;
+                        overflow: hidden;
+                    ">
+                        <div style="
+                            width: 100%;
+                            height: 100%;
+                            background-color: #7bb56b;
+                            border-radius: 20px;
+                        "></div>
+                    </div>
+
+                    <strong>100%</strong>
+                </div>
+
+            </header>
+
+            <h3 style="
+                color: #6f4a36;
+                font-size: 30px;
+                margin-bottom: 35px;
+                font-weight: 700;
+            ">
+                Retroalimentación
+            </h3>
+
+            <div style="
+                background-color: white;
+                width: 360px;
+                min-height: 190px;
+                border-radius: 28px;
+                padding: 35px 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 22px;
+                margin-bottom: 35px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            ">
+
+                <p style="
+                    color: #4f9b4f;
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin: 0;
+                ">
+                    <span id="correctas">20</span> Respuestas correctas
+                </p>
+
+                <p style="
+                    color: #b34747;
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin: 0;
+                ">
+                    <span id="incorrectas">3</span> incorrectas
+                </p>
+
+            </div>
+
+            <button class="boton boton-cafe" onclick="location.href='juegos.html'" style="
+                width: 200px;
+            ">
+                Regresar
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="../js/retroalimentacion.js"></script>
+</body>
+</html>
