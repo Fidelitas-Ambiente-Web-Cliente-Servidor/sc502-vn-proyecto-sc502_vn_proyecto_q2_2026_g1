@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recuperar contraseña — EduLecto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
+<?php
+$tituloPagina = 'Recuperar contraseña — EduLecto';
+$hojasEstilo = ['styles.css'];
+require BASE_PATH . '/views/layout/header.php';
+?>
   <div class="auth-screen">
     <aside class="auth-panel">
       <div class="auth-panel__owl">
-        <img src="../img/buho.png" alt="Búho mascota de EduLecto leyendo un libro" />
+        <img src="img/buho.png" alt="Búho mascota de EduLecto leyendo un libro" />
       </div>
       <p class="auth-panel__tagline">Recupera tu contraseña</p>
     </aside>
@@ -37,7 +31,7 @@
           <button type="submit" class="btn">Enviar enlace de recuperación</button>
         </form>
 
-        <a class="back-link" href="login.html">
+        <a class="back-link" href="index.php?page=login">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           Volver al inicio de sesión
         </a>
@@ -52,7 +46,6 @@
       </div>
     </section>
   </div>
-
-  <script src="../js/script.js"></script>
-</body>
-</html>
+<?php
+$scripts = ['script.js'];
+require BASE_PATH . '/views/layout/footer.php';

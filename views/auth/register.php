@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crear cuenta — EduLecto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
+<?php
+$tituloPagina = 'Crear cuenta — EduLecto';
+$hojasEstilo = ['styles.css'];
+require BASE_PATH . '/views/layout/header.php';
+?>
   <div class="auth-screen">
     <aside class="auth-panel">
       <div class="auth-panel__owl">
-        <img src="../img/buho.png" alt="Búho mascota de EduLecto leyendo un libro" />
+        <img src="img/buho.png" alt="Búho mascota de EduLecto leyendo un libro" />
       </div>
       <p class="auth-panel__tagline">Crea una cuenta.</p>
     </aside>
@@ -89,6 +83,22 @@
             <p class="field-error" role="alert"></p>
           </div>
 
+          <div class="field" id="field-edad" style="display:none;">
+            <label for="edad">Edad *</label>
+            <div class="input-wrap">
+              <input type="number" id="edad" name="edad" min="1" max="120" placeholder="Edad del estudiante" />
+            </div>
+            <p class="field-error" role="alert"></p>
+          </div>
+
+          <div class="field" id="field-especialidad" style="display:none;">
+            <label for="especialidad">Especialidad</label>
+            <div class="input-wrap">
+              <input type="text" id="especialidad" name="especialidad" placeholder="Ej: Comprensión lectora" />
+            </div>
+            <p class="field-error" role="alert"></p>
+          </div>
+
           <button type="submit" class="btn">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
             Registrarse
@@ -98,13 +108,12 @@
         <div class="auth-links">
           <p>
             ¿Ya tenés una cuenta?<br />
-            <a class="register-link" href="login.html">Iniciar sesión</a>
+            <a class="register-link" href="index.php?page=login">Iniciar sesión</a>
           </p>
         </div>
       </div>
     </section>
   </div>
-
-  <script src="../js/script.js"></script>
-</body>
-</html>
+<?php
+$scripts = ['script.js'];
+require BASE_PATH . '/views/layout/footer.php';

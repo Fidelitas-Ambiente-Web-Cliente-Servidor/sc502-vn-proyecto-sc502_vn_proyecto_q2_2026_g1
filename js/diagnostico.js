@@ -1,72 +1,71 @@
-const preguntas = [
-    { texto: "¿Cuál palabra esta bien escrita?", opciones: ["Baso", "Vaso", "Bazo"], correcta: 1 },
-    { texto: "¿Cuál palabra esta bien escrita?", opciones: ["Havía", "Abía", "Había"], correcta: 2 },
-    { texto: "Complete la oración: El sol ___ por el este.", opciones: ["sale", "zale", "sales"], correcta: 0 },
-    { texto: "¿Cuál palabra lleva tilde?", opciones: ["arbol", "árbol", "arból"], correcta: 1 },
-    { texto: "¿Cuál es el plural de lápiz?", opciones: ["lápizes", "lápises", "lápices"], correcta: 2 }
-];
+$(function () {
+    var preguntas = window.EDULECTO_PREGUNTAS || [];
+    var actual = 0;
+    var respuestas = new Array(preguntas.length).fill(null);
 
-let actual = 0;
-let respuestas = new Array(preguntas.length).fill(null);
+    var $textoPregunta = $("#textoPregunta");
+    var $contenedorOpciones = $("#opciones");
+    var $btnAnterior = $("#btnAnterior");
+    var $btnSiguiente = $("#btnSiguiente");
 
-const textoPregunta = document.getElementById("textoPregunta");
-const contenedorOpciones = document.getElementById("opciones");
-const btnAnterior = document.getElementById("btnAnterior");
-const btnSiguiente = document.getElementById("btnSiguiente");
+    function mostrarPregunta() {
+        var pregunta = preguntas[actual];
+        $textoPregunta.text(pregunta.texto);
+        $contenedorOpciones.empty();
 
-function mostrarPregunta() {
-    const pregunta = preguntas[actual];
-    textoPregunta.textContent = pregunta.texto;
-    contenedorOpciones.innerHTML = "";
+        pregunta.opciones.forEach(function (opcion, i) {
+            var $btn = $("<button>")
+                .addClass("boton boton-opcion")
+                .text(opcion);
+            if (respuestas[actual] === i) {
+                $btn.addClass("seleccionada");
+            }
+            $btn.on("click", function () {
+                respuestas[actual] = i;
+                mostrarPregunta();
+            });
+            $contenedorOpciones.append($btn);
+        });
 
-    pregunta.opciones.forEach(function (opcion, i) {
-        const btn = document.createElement("button");
-        btn.className = "boton boton-opcion";
-        btn.textContent = opcion;
-        if (respuestas[actual] === i) {
-            btn.classList.add("seleccionada");
-        }
-        btn.onclick = function () {
-            respuestas[actual] = i;
+        $btnSiguiente.text(actual === preguntas.length - 1 ? "Finalizar" : "Siguiente");
+    }
+
+    $btnAnterior.on("click", function () {
+        if (actual > 0) {
+            actual--;
             mostrarPregunta();
-        };
-        contenedorOpciones.appendChild(btn);
+        }
     });
 
-    btnSiguiente.textContent = actual === preguntas.length - 1 ? "Finalizar" : "Siguiente";
-}
-
-btnAnterior.onclick = function () {
-    if (actual > 0) {
-        actual--;
-        mostrarPregunta();
-    }
-};
-
-btnSiguiente.onclick = function () {
-    if (respuestas[actual] === null) {
-        alert("Seleccione una respuesta para continuar");
-        return;
-    }
-
-    if (actual < preguntas.length - 1) {
-        actual++;
-        mostrarPregunta();
-    } else {
-        finalizarDiagnostico();
-    }
-};
-
-function finalizarDiagnostico() {
-    let aciertos = 0;
-    for (let i = 0; i < preguntas.length; i++) {
-        if (respuestas[i] === preguntas[i].correcta) {
-            aciertos++;
+    $btnSiguiente.on("click", function () {
+        if (respuestas[actual] === null) {
+            alert("Seleccione una respuesta para continuar");
+            return;
         }
-    }
-    localStorage.setItem("aciertos", aciertos);
-    localStorage.setItem("totalPreguntas", preguntas.length);
-    window.location.href = "resultado.html";
-}
 
-mostrarPregunta();
+        if (actual < preguntas.length - 1) {
+            actual++;
+            mostrarPregunta();
+        } else {
+            finalizarDiagnostico();
+        }
+    });
+
+    function finalizarDiagnostico() {
+        $btnSiguiente.prop("disabled", true).text("Enviando...");
+
+        $.ajax({
+            url: "ajax.php?action=diagnosticoFinalizar",
+            method: "POST",
+            dataType: "json",
+            data: { respuestas: JSON.stringify(respuestas) }
+        }).done(function (respuesta) {
+            window.location.href = respuesta.redirect;
+        }).fail(function () {
+            alert("No se pudo guardar el diagnóstico. Intenta de nuevo.");
+            $btnSiguiente.prop("disabled", false).text("Finalizar");
+        });
+    }
+
+    mostrarPregunta();
+});

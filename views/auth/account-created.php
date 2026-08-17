@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cuenta creada — EduLecto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
+<?php
+$tituloPagina = 'Cuenta creada — EduLecto';
+$hojasEstilo = ['styles.css'];
+require BASE_PATH . '/views/layout/header.php';
+?>
   <div class="auth-screen">
     <aside class="auth-panel">
       <div class="auth-panel__owl">
@@ -31,11 +25,10 @@
         <h1>Registrado correctamente</h1>
         <p class="lead">Su cuenta ha sido creada con éxito.</p>
 
-        <a class="btn" href="login.html">Iniciar sesión</a>
+        <a class="btn" href="index.php?page=login">Iniciar sesión</a>
       </div>
     </section>
   </div>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
+<?php
+$scripts = ['script.js'];
+require BASE_PATH . '/views/layout/footer.php';

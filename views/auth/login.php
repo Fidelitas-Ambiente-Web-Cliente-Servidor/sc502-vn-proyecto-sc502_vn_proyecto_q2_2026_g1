@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iniciar sesión — EduLecto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
+<?php
+$tituloPagina = 'Iniciar sesión — EduLecto';
+$hojasEstilo = ['styles.css'];
+require BASE_PATH . '/views/layout/header.php';
+?>
   <div class="auth-screen">
     <aside class="auth-panel">
       <div class="auth-panel__owl">
-        <img src="../img/buho.png" alt="Búho mascota de EduLecto leyendo un libro" />
+        <img src="img/buho.png" alt="Búho mascota de EduLecto leyendo un libro" />
       </div>
       <p class="auth-panel__tagline">Aprende leyendo, jugando y ganando recompensas.</p>
     </aside>
@@ -52,16 +46,15 @@
         </form>
 
         <div class="auth-links">
-          <p><a href="forgot-password.html">¿Olvidaste tu contraseña?</a></p>
+          <p><a href="index.php?page=forgot-password">¿Olvidaste tu contraseña?</a></p>
           <p>
             ¿No tenés cuenta?<br />
-            <a class="register-link" href="register.html">Registrate</a>
+            <a class="register-link" href="index.php?page=register">Registrate</a>
           </p>
         </div>
       </div>
     </section>
   </div>
-
-  <script src="../js/script.js"></script>
-</body>
-</html>
+<?php
+$scripts = ['script.js'];
+require BASE_PATH . '/views/layout/footer.php';

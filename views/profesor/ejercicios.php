@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLecto - Ejercicios</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/profesor.css">
-</head>
-<body>
+<?php
+$tituloPagina = 'EduLecto - Ejercicios';
+$hojasEstilo = ['estilos.css', 'profesor.css'];
+$fuente = 'fredoka';
+$paginaActiva = 'ejercicios';
+require BASE_PATH . '/views/layout/header.php';
+require BASE_PATH . '/views/layout/nav_profesor.php';
+?>
 
-    <nav class="navbar">
-        <a href="profesor-reportes.html">Inicio</a>
-        <a href="profesor-estudiantes.html">Estudiantes</a>
-        <a href="profesor-ejercicios.html" class="activo">Ejercicios</a>
-        <a href="profesor-clases.html">Clases</a>
-        <a href="profesor-foro.html">Foro</a>
-        <a href="profesor-reportes.html">Reportes</a>
-    </nav>
-
-    <p class="saludo" id="saludo">Hola Ashley....</p>
+    <p class="saludo" id="saludo">Hola <?= htmlspecialchars($_SESSION['nombre_completo']) ?>....</p>
 
     <div class="contenido-profesor">
 
@@ -59,6 +46,21 @@
             </div>
 
             <div class="campo-formulario">
+                <label for="tipoActividad">Tipo *</label>
+                <select id="tipoActividad">
+                    <option value="crucigrama">Crucigrama</option>
+                    <option value="ordenar_palabras">Ordenar palabras</option>
+                    <option value="sopa_letras">Sopa de letras</option>
+                    <option value="adivinanza">Adivinanza</option>
+                </select>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="nivelActividad">Nivel *</label>
+                <input type="number" id="nivelActividad" min="1" max="10" value="1">
+            </div>
+
+            <div class="campo-formulario">
                 <label for="estadoActividad">Estado *</label>
                 <select id="estadoActividad">
                     <option value="Activo">Activo</option>
@@ -74,8 +76,11 @@
 
     </div>
 
-    <img src="../img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
+    <img src="img/buho.png" alt="Buho de EduLecto" class="buho-esquina" onerror="this.style.display='none'">
 
-    <script src="../js/profesor-ejercicios.js"></script>
-</body>
-</html>
+    <script>
+        window.EDULECTO_EJERCICIOS = <?= json_encode($ejercicios, JSON_UNESCAPED_UNICODE) ?>;
+    </script>
+<?php
+$scripts = ['profesor-ejercicios.js'];
+require BASE_PATH . '/views/layout/footer.php';
